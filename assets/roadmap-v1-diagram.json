@@ -1,0 +1,44 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "内部开源社区建设路线图 v1",
+    "locale": "zh-CN",
+    "quality_profile": "showcase"
+  },
+  "lanes": [
+    { "id": "prep", "label": "准备 · 发起人" },
+    { "id": "first", "label": "首次贡献 · 平级参与者" },
+    { "id": "scale", "label": "扩展" }
+  ],
+  "phases": [
+    { "id": "phase_p0", "label": "P0 冷启动", "fromCol": 0, "toCol": 3, "variant": "emphasis" },
+    { "id": "phase_p1", "label": "P1 试点", "fromCol": 4, "toCol": 4 },
+    { "id": "phase_p2", "label": "P2 扩展", "fromCol": 5, "toCol": 5, "variant": "dashed" }
+  ],
+  "mainPath": ["seed_pick", "skeleton", "gfi", "invite", "firstpr", "replicate", "p2", "steady"],
+  "nodes": [
+    { "id": "seed_pick", "lane": "prep", "col": 0, "type": "frontend", "label": "定种子仓库", "sublabel": "ai-forum" },
+    { "id": "skeleton", "lane": "prep", "col": 1, "type": "backend", "label": "六件套入库", "sublabel": "含补 LICENSE" },
+    { "id": "gfi", "lane": "prep", "col": 2, "type": "messagebus", "label": "拆 3 个入门任务", "sublabel": "从真实 backlog 挑", "width": 110 },
+    { "id": "invite", "lane": "first", "col": 2, "type": "messagebus", "label": "邀 1–2 位伙伴", "sublabel": "附一个 30 分钟小任务" },
+    { "id": "firstpr", "lane": "first", "col": 3, "type": "frontend", "label": "首个 PR 闭环", "sublabel": "72h 内响应·合并后致谢" },
+    { "id": "replicate", "lane": "scale", "col": 4, "type": "cloud", "label": "复制到 2–3 个仓库", "sublabel": "deep-module-mapper 起", "width": 122 },
+    { "id": "p2", "lane": "scale", "col": 5, "type": "cloud", "label": "P2：10 人上下", "sublabel": "再议 org 与例行活动" },
+    { "id": "steady", "lane": "first", "col": 5, "type": "external", "label": "常态运营", "sublabel": "此后不再预设" }
+  ],
+  "edges": [
+    { "from": "seed_pick", "to": "skeleton", "role": "main" },
+    { "from": "skeleton", "to": "gfi", "role": "main" },
+    { "from": "gfi", "to": "invite", "role": "main", "label": "任务就绪" },
+    { "from": "invite", "to": "firstpr", "role": "main" },
+    { "from": "firstpr", "to": "replicate", "role": "main", "label": "出口：1–2 位贡献者合并 PR", "variant": "emphasis" },
+    { "from": "replicate", "to": "p2", "role": "main", "label": "出口：跨仓库稳定贡献者", "variant": "emphasis" },
+    { "from": "p2", "to": "steady", "role": "main" }
+  ],
+  "cards": [
+    { "dot": "emerald", "title": "社区模式", "items": ["平级自由：无管理层、无绩效、无例行运营", "谁的项目谁维护：每个仓库由其 Owner 负责", "托管在 GitHub 个人账号 li-yongqvan 下"] },
+    { "dot": "cyan", "title": "首个 good first issue", "items": ["六件套：README 定位段、CONTRIBUTING、礼仪、CoC、模板、LICENSE", "给 ai-forum 选一个 LICENSE（当前缺失），参照 GitHub 官方指南", "备选种子仓库：deep-module-mapper"] },
+    { "dot": "rose", "title": "风险与应对", "items": ["Owner 掉线＝仓库停摆：接受，社区层面无单点", "响应慢赶走新人：72h 约定写进 CONTRIBUTING", "任务无真实需求：gfi 只从真实 backlog 拆"] }
+  ]
+}
