@@ -9,6 +9,7 @@
 | 想看什么 | 去哪看 |
 |---|---|
 | 执行蓝图（P0 冷启动 → P1 试点 → P2 扩展） | [roadmap-v1.md](roadmap-v1.md) |
+| 新人培养计划（写给新生本人的教学文档） | [training-plan-v1.md](training-plan-v1.md) |
 | 全部决策的索引（地图） | [map.md](map.md) |
 | 一张图看懂路线图 | [assets/roadmap-v1-diagram.html](assets/roadmap-v1-diagram.html)（浏览器直接打开） |
 | 决策票（平台选型、机制裁剪、度量激励、礼仪等） | [issues/](issues/) 与 GitHub Issues |
@@ -20,7 +21,8 @@
 
 ## 状态
 
-- 路线图 v1：定稿候选，待发起人最终接受
+- 路线图 v1：**已定稿**（2026-11-03 接受），进入 P0 执行阶段
+- 新人培养计划 v1：初稿（2026-11-04），待运营者审定后分发
 - 首个种子仓库：[ai-forum](https://github.com/li-yongqvan/ai-forum)
 
 ## License

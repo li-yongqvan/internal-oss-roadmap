@@ -1,7 +1,7 @@
 # 04 起草《内部开源社区建设路线图》并与用户定稿
 
 Type: prototype
-Status: v1-ready（待用户接受；接受后关闭并清理地图）
+Status: resolved（v1 于 2026-11-03 被用户接受，定稿）
 Assignee: liyongquan（本会话认领，2026-10-31）
 Blocked by: 01, 02, 03（均已 resolved）
 
@@ -31,4 +31,4 @@ Blocked by: 01, 02, 03（均已 resolved）
 - 新增并已解决 [05 社区礼仪文档](05-community-etiquette.md)：`../assets/05-community-etiquette.md`（11 条来源全部验证）。
 - 种子仓库按 D5 挑定：**ai-forum**（公开、面向学院师生、2026-10 活跃、有 docs 文化；备选 deep-module-mapper）。事实发现：ai-forum 无 LICENSE → 第一个 gfi 即"选一个 license"。
 - D1 由用户拍板覆盖 01 号票默认推荐（其内网/合规前提不适用于个人项目）。
-- 待用户接受 v1 → 关闭本票，更新地图 Decisions so far、清除雾区。
+- 2026-11-03：用户接受 v1，本票关闭。地图已更新（Decisions so far 补 04/05，雾区清除，目的地达成）。规划阶段结束，执行按 roadmap-v1.md P0 进行。

@@ -1,0 +1,51 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "你的第一个 PR",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "legend": {
+      "entries": {
+        "frontend": { "label": "GitHub 网页端" },
+        "backend": { "label": "本地终端" },
+        "database": { "label": "里程碑" },
+        "security": { "label": "修改回路" }
+      }
+    }
+  },
+  "lanes": [
+    { "id": "web", "label": "GitHub 网页端" },
+    { "id": "local", "label": "你的电脑（本地）" },
+    { "id": "revise", "label": "被要求修改（正常！）", "variant": "exception" }
+  ],
+  "phases": [
+    { "id": "ph-start", "label": "起步", "fromCol": 0, "toCol": 1 },
+    { "id": "ph-work", "label": "改与提交", "fromCol": 2, "toCol": 3 },
+    { "id": "ph-review", "label": "PR 与 review", "fromCol": 4, "toCol": 5 }
+  ],
+  "mainPath": ["fork", "clone", "branch", "commit", "pr", "review"],
+  "nodes": [
+    { "id": "fork", "lane": "web", "col": 0, "type": "frontend", "label": "Fork 练习仓库", "sublabel": "复制到你账号下" },
+    { "id": "clone", "lane": "local", "col": 1, "type": "backend", "label": "clone 到本地", "sublabel": "git clone" },
+    { "id": "branch", "lane": "local", "col": 2, "type": "backend", "label": "建分支·做修改", "sublabel": "git switch -c" },
+    { "id": "commit", "lane": "local", "col": 3, "type": "backend", "label": "提交并推送", "sublabel": "add · commit · push" },
+    { "id": "pr", "lane": "web", "col": 4, "type": "frontend", "label": "发起 PR", "sublabel": "Compare & pull request" },
+    { "id": "review", "lane": "web", "col": 5, "type": "database", "label": "review · 合并", "sublabel": "Owner 72h 内响应", "tag": "致谢·进名录" },
+    { "id": "fix", "lane": "revise", "col": 5, "type": "security", "label": "按意见修改", "sublabel": "同一分支追加 commit" }
+  ],
+  "edges": [
+    { "from": "fork", "to": "clone", "label": "克隆你的 fork" },
+    { "from": "clone", "to": "branch" },
+    { "from": "branch", "to": "commit", "label": "小步提交" },
+    { "from": "commit", "to": "pr", "label": "push 后网页发起" },
+    { "from": "pr", "to": "review", "label": "等待 review" },
+    { "from": "review", "to": "fix", "label": "被要求修改", "role": "branch" },
+    { "from": "fix", "to": "pr", "label": "追加 commit·PR 自动更新", "role": "return" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "一条铁律", "items": ["一个 PR 只做一件事", "100 行上下正好，拿不准就更小", "小 PR 评审快、反馈快"] },
+    { "dot": "emerald", "title": "社区对你的承诺", "items": ["Owner 72 小时内响应", "review 只谈代码，不评价人", "合并即致谢，进贡献者名录"] },
+    { "dot": "amber", "title": "被打回怎么办", "items": ["在同一个分支继续 add·commit·push", "PR 自动更新，不要关掉重开", "不同意意见可以摆理由讨论"] }
+  ]
+}

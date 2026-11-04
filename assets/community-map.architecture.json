@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "社区地图与你的位置",
+    "locale": "zh-CN",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    { "id": "you", "type": "external", "label": "你（新人）", "sublabel": "零基础可开始", "pos": [40, 300], "size": [120, 64] },
+    { "id": "etiquette", "type": "security", "label": "社区礼仪 · 行为准则", "sublabel": "五个日常动作", "pos": [40, 100], "size": [150, 64] },
+    { "id": "practice", "type": "backend", "label": "练习仓库", "sublabel": "internal-oss-roadmap", "pos": [330, 100], "size": [150, 64] },
+    { "id": "roster", "type": "database", "label": "贡献者名录", "sublabel": "合并即上榜", "pos": [880, 100], "size": [140, 64] },
+    { "id": "aiforum", "type": "frontend", "label": "ai-forum", "sublabel": "种子仓库 · Go + Web", "tag": "good first issue", "pos": [330, 300], "size": [150, 64] },
+    { "id": "owner", "type": "cloud", "label": "Owner", "sublabel": "谁的项目谁维护", "pos": [640, 300], "size": [130, 64] }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "平级自由社区（GitHub 个人账号）", "wraps": ["practice", "roster", "aiforum", "owner"] }
+  ],
+  "connections": [
+    { "id": "c-read", "from": "you", "to": "etiquette", "label": "开工前读一遍", "variant": "dashed", "fromSide": "top", "toSide": "bottom" },
+    { "id": "c-practice", "from": "you", "to": "practice", "label": "第 0 步·空跑 PR", "variant": "emphasis" },
+    { "id": "c-gfi", "from": "you", "to": "aiforum", "label": "认领 good first issue", "fromSide": "bottom", "toSide": "bottom" },
+    { "id": "c-review", "from": "owner", "to": "aiforum", "label": "72h 内 review" },
+    { "id": "c-roster", "from": "aiforum", "to": "roster", "label": "合并即致谢", "fromSide": "top", "toSide": "bottom" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "平级自由社区", "items": ["没有管理层、没有绩效、没有考核", "每个仓库由它的 Owner 维护", "想慢就慢，想停就停"] },
+    { "dot": "emerald", "title": "两个仓库，两种用途", "items": ["练习仓库：零风险空跑全流程", "ai-forum：真实任务、真实用户"] },
+    { "dot": "amber", "title": "承诺是双向的", "items": ["认领了要说一声，做不到要说出来", "Owner 72 小时内响应你的 PR", "review 永远对代码、不对人"] }
+  ]
+}

@@ -23,15 +23,12 @@ Labels: wayfinder:map
 - [01 平台选型对比](issues/01-platform-selection.md)：默认挂公司已有 GitLab 开 inner-source 组，无实例则自建 Gitea（2C1G 起步）；GitHub 不作默认（国内访问/合规）；最晚在第一个试点仓库创建前拍板。注意 GitLab 免费版无 CODEOWNERS 强制审批与贡献统计（Premium 功能）。
 - [02 机制裁剪：单人可运营的最小机制集](issues/02-mechanism-tailoring.md)：六机制 MVP 化后共约 2–2.5h/周，个位数参与者阶段全套保留；核心组合 = lazy consensus 轻提案 + Owner/Trusted Committer 两级阶梯 + 人工 good first issue + 结对影子导师；砍掉 KEP 式提案状态机与度量面板。
 - [03 度量与激励选项](issues/03-metrics-incentives.md)：度量从 L1 手工月度盘点表起步（约 0.5 天/月），GrmoireLab 类留到项目数 >50；激励以公开认可 + 成长机会（大会/转岗 Trusted Committer）为主线，绩效挂钩只做团队级指标 + 主管定性，勿直连个人 commit 数。
+- [05 社区礼仪文档](issues/05-community-etiquette.md)：《社区礼仪》成文（[assets/05-community-etiquette.md](assets/05-community-etiquette.md)），11 条来源全部验证；含 Contributor Covenant 官方中文版等六件套引用来源。
+- [04 起草路线图并与用户定稿](issues/04-roadmap-draft.md)：**v1 定稿（2026-11-03 用户接受）**——[roadmap-v1.md](roadmap-v1.md)：平级自由社区模式、GitHub 个人账号托管、最简骨架六件套、种子仓库 ai-forum、P0/P1/P2 相对阶段。v0 公司化设计全部推翻。目的地达成，本地图完结。
 
 ## Not yet specified
 
-> Open 票：[04 起草路线图并与用户定稿](issues/04-roadmap-draft.md)——**v1 已产出待接受**（[roadmap-v1.md](roadmap-v1.md)：平级自由社区模式、种子仓库 ai-forum、六件套骨架）。[05 社区礼仪文档](issues/05-community-etiquette.md)已解决（[assets/05-community-etiquette.md](assets/05-community-etiquette.md)）。下列雾项已在 v1 中成形，04 关闭时清除。
-
-- 冷启动内容：第一批 good first issue 从哪来（→ 草稿 P0 第 1 周：从运营者自己团队 backlog 拆"有人要、边界清、2 周可完成"的任务）
-- 首期导师来源：单人运营下导师是谁（→ 草稿 P0：运营者本人结对影子，TC 诞生后分担）
-- P0 的"最小可行动作"：拿到路线图的第一个周末就能做的事（→ 草稿 P0：写机制文件四件套 + 列种子仓库候选 + 发 GitLab 询问）
-- 可持续性：单人驱动如何避免倦怠/中断（→ 草稿风险 R1：时间预算写死、固定时段、公开承诺、TC 放权、P2 共同发起人；草稿显示不需独立票）
+> 无——目的地已于 2026-11-03 达成（v1 定稿），全部雾项在 v1 中成形后清除。后续执行（P0 冷启动）按 [roadmap-v1.md](roadmap-v1.md) 进行，不再开新票。
 
 ## Out of scope
 

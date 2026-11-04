@@ -1,0 +1,52 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "开源新人成长路径",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "legend": {
+      "entries": {
+        "backend": { "label": "成长动作" },
+        "database": { "label": "里程碑" },
+        "security": { "label": "卡住与自救" }
+      }
+    }
+  },
+  "lanes": [
+    { "id": "main", "label": "你的成长主径" },
+    { "id": "stuck", "label": "卡住与自救", "variant": "exception" }
+  ],
+  "phases": [
+    { "id": "ph-ready", "label": "准备", "fromCol": 0, "toCol": 0 },
+    { "id": "ph-first", "label": "首个贡献", "fromCol": 1, "toCol": 2 },
+    { "id": "ph-solo", "label": "独立贡献", "fromCol": 3, "toCol": 4 },
+    { "id": "ph-give", "label": "回馈", "fromCol": 5, "toCol": 5 }
+  ],
+  "mainPath": ["prep", "claim", "merged", "solo", "done", "giveback"],
+  "nodes": [
+    { "id": "prep", "lane": "main", "col": 0, "type": "backend", "width": 132, "label": "第 0 步·准备", "sublabel": "装 git·空跑一遍 PR" },
+    { "id": "claim", "lane": "main", "col": 1, "type": "backend", "width": 132, "label": "第 1 步·认领任务", "sublabel": "good first issue 评论「我来做」" },
+    { "id": "merged", "lane": "main", "col": 2, "type": "database", "label": "首个 PR 合并", "sublabel": "名字进贡献者名录", "tag": "完成标准" },
+    { "id": "solo", "lane": "main", "col": 3, "type": "backend", "width": 132, "label": "第 2 步·独立贡献", "sublabel": "常规 issue·经历 review" },
+    { "id": "done", "lane": "main", "col": 4, "type": "database", "label": "独立完成任务", "sublabel": "不靠任何人手把手", "tag": "完成标准" },
+    { "id": "giveback", "lane": "main", "col": 5, "type": "backend", "label": "第 3 步·回馈", "sublabel": "review·带新人·当 Owner" },
+    { "id": "blocked", "lane": "stuck", "col": 2, "type": "security", "label": "卡住了", "sublabel": "超过 1 小时" },
+    { "id": "selfhelp", "lane": "stuck", "col": 3, "type": "security", "label": "自救阶梯", "sublabel": "先搜→再问→礼貌催" }
+  ],
+  "edges": [
+    { "from": "prep", "to": "claim" },
+    { "from": "claim", "to": "merged" },
+    { "from": "merged", "to": "solo" },
+    { "from": "solo", "to": "done" },
+    { "from": "done", "to": "giveback" },
+    { "from": "claim", "to": "blocked", "label": "随时可能", "role": "branch" },
+    { "from": "blocked", "to": "selfhelp" },
+    { "from": "selfhelp", "to": "merged", "label": "回到主径", "role": "return" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "每步一个完成标准", "items": ["准备：说清分支和 PR 是什么", "首个贡献：一个已合并的 PR", "独立：不手把手完成常规任务"] },
+    { "dot": "emerald", "title": "不设级别，不考核", "items": ["没有晋升体系，想停就停", "回馈方向自己选：review、带新人、当 Owner", "成长的终点是发起自己的仓库"] },
+    { "dot": "amber", "title": "卡住是常态", "items": ["卡住超过 1 小时就求助", "先搜 → 再公开问 → 一周没响应礼貌催", "把报错原文完整贴出来就是能力"] }
+  ]
+}
