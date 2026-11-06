@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "三个仓库模型：upstream、fork 与本地",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "legend": {
+      "entries": {
+        "backend": { "label": "原仓库" },
+        "frontend": { "label": "你的 fork" },
+        "external": { "label": "你的电脑" }
+      }
+    }
+  },
+  "components": [
+    { "id": "fork", "type": "frontend", "label": "你的 fork", "sublabel": "你账号下的完整拷贝", "pos": [400, 80], "size": [150, 64] },
+    { "id": "local", "type": "external", "label": "本地仓库", "sublabel": "修改从这里开始", "pos": [60, 300], "size": [150, 64] },
+    { "id": "upstream", "type": "backend", "label": "原仓库 upstream", "sublabel": "Owner 维护·只有一个", "tag": "ai-forum", "pos": [740, 300], "size": [170, 68] }
+  ],
+  "connections": [
+    { "id": "c-fork", "from": "upstream", "to": "fork", "label": "Fork：复制到你名下", "variant": "emphasis", "fromSide": "top", "toSide": "right" },
+    { "id": "c-clone", "from": "fork", "to": "local", "label": "clone：下载到本地", "fromSide": "bottom", "toSide": "top" },
+    { "id": "c-push", "from": "local", "to": "fork", "label": "push：上传提交", "fromSide": "top", "toSide": "bottom" },
+    { "id": "c-pr", "from": "fork", "to": "upstream", "label": "PR：请求合并", "variant": "emphasis", "fromSide": "bottom", "toSide": "top" },
+    { "id": "c-pull", "from": "upstream", "to": "local", "label": "pull：经常同步最新", "variant": "dashed", "fromSide": "left", "toSide": "right", "labelDy": 50 }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "为什么有三个仓库", "items": ["fork 让你随便折腾，不影响原仓库", "本地让你离线工作，git 命令都在这里", "原仓库只有一个，由 Owner 把关"] },
+    { "dot": "emerald", "title": "一次贡献的完整旅程", "items": ["fork → clone → 修改提交 → push → PR", "熟练后五分钟走完全程"] },
+    { "dot": "amber", "title": "保持同步", "items": ["动手前先 pull 最新", "减少合并冲突（见正文 §八）"] }
+  ]
+}

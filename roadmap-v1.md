@@ -26,7 +26,7 @@
    - **issue/PR 模板**：大改动提案 4 节模板（背景/方案/影响/备选），小改动免提案
    - **LICENSE**：ai-forum 目前无 license——**第一个 good first issue 就是选一个 license**（参照 GitHub 官方 choosing-a-license 指南）
 3. [ ] 拆 3 个 good first issue，从真实 backlog 挑（候选方向：LICENSE、面向新人的 README 快速上手、部署文档补全），每个写清验收标准
-4. [ ] 建 Gitee 同步镜像：培养计划仓库与 ai-forum 各自导入 Gitee、开启手动强制同步，作为新人零门槛练习通道（见培养计划附录 A「Gitee 变体」）
+4. [ ] 建 Gitee 同步镜像：培养计划仓库与 ai-forum 各自导入 Gitee、开启手动强制同步，作为新人零门槛练习通道（见培养计划附录 A「Gitee 变体」）——ai-forum 已建并验证（[gitee.com/li-yongqvan/ai-forum](https://gitee.com/li-yongqvan/ai-forum)，2026-11-06：136 commits 一致、匿名可见、强制同步可用）；培养计划仓库镜像待做
 5. [ ] 私下邀 1–2 位可能感兴趣的同事/朋友：发条消息，附一个"30 分钟能完成"的具体任务，不谈"加入社区"只给具体活
 6. [ ] 首个 PR 走通闭环：Owner 72h 内响应、按《社区礼仪》做 review、合并后公开致谢（README 贡献者名单）
 7. [ ] 1–2 周后轻复盘：新人卡在哪一步就改哪一步

@@ -1,0 +1,55 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "多人协作：分支并行与冲突",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "legend": {
+      "entries": {
+        "backend": { "label": "本地动作" },
+        "frontend": { "label": "提 PR" },
+        "database": { "label": "合并节点" },
+        "security": { "label": "冲突点" }
+      }
+    }
+  },
+  "lanes": [
+    { "id": "mainline", "label": "主线 main" },
+    { "id": "you", "label": "你的分支" },
+    { "id": "peer", "label": "同伴的分支（冲突现场）" }
+  ],
+  "phases": [
+    { "id": "ph-claim", "label": "认领", "fromCol": 0, "toCol": 0 },
+    { "id": "ph-parallel", "label": "并行修改", "fromCol": 1, "toCol": 2 },
+    { "id": "ph-merge", "label": "合并与冲突", "fromCol": 3, "toCol": 5 }
+  ],
+  "mainPath": ["claim", "youBranch", "youPr", "mergeYou"],
+  "nodes": [
+    { "id": "claim", "lane": "mainline", "col": 0, "type": "backend", "width": 124, "label": "issue 被认领", "sublabel": "你评论「我来做」" },
+    { "id": "youBranch", "lane": "you", "col": 1, "type": "backend", "width": 124, "label": "你拉出分支", "sublabel": "git switch -c" },
+    { "id": "youPr", "lane": "you", "col": 2, "type": "frontend", "width": 124, "label": "你提 PR", "sublabel": "只改一处·小步" },
+    { "id": "mergeYou", "lane": "mainline", "col": 3, "type": "database", "width": 124, "label": "你的 PR 合并", "sublabel": "review 通过·致谢" },
+    { "id": "peerBranch", "lane": "peer", "col": 1, "type": "backend", "width": 124, "label": "同伴拉出分支", "sublabel": "改了同一处" },
+    { "id": "peerPr", "lane": "peer", "col": 2, "type": "frontend", "width": 124, "label": "同伴提 PR", "sublabel": "同一文件" },
+    { "id": "conflict", "lane": "peer", "col": 3, "type": "security", "width": 124, "label": "合并冲突", "sublabel": "git 标出冲突行" },
+    { "id": "resolve", "lane": "peer", "col": 4, "type": "backend", "width": 128, "label": "解决冲突", "sublabel": "pull→融合→再推" },
+    { "id": "mergePeer", "lane": "mainline", "col": 5, "type": "database", "width": 124, "label": "同伴 PR 合并", "sublabel": "冲突解决后" }
+  ],
+  "edges": [
+    { "from": "claim", "to": "youBranch", "label": "认领后拉分支" },
+    { "from": "youBranch", "to": "youPr", "label": "小步提交" },
+    { "from": "youPr", "to": "mergeYou", "label": "review 通过" },
+    { "from": "claim", "to": "peerBranch", "label": "同伴并行修改", "role": "branch" },
+    { "from": "peerBranch", "to": "peerPr", "label": "提交推送" },
+    { "from": "mergeYou", "to": "conflict", "label": "主线已更新" },
+    { "from": "peerPr", "to": "conflict", "label": "合并时发现" },
+    { "from": "conflict", "to": "resolve", "label": "不是事故" },
+    { "from": "resolve", "to": "mergePeer", "label": "解决后合并" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "主线永远可用", "items": ["main 只通过 PR 收改动", "各改各的分支，谁也不覆盖谁", "认领制让重复劳动从源头消失"] },
+    { "dot": "amber", "title": "冲突有标准解法", "items": ["git 会明确标出冲突行", "pull 最新 → 选择或融合 → 再推", "搞不定就贴 issue 求助，完全正常"] },
+    { "dot": "emerald", "title": "小步是最好的预防", "items": ["PR 越小，冲突越少", "review 越快，合并越顺", "这就是「一个 PR 只做一件事」"] }
+  ]
+}
