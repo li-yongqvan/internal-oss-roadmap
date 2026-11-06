@@ -178,7 +178,7 @@ ai-forum 是 Go + Web，但入门任务不要求写 Go。真要上手时你已�
 
 > 零基础照做即可，以本计划所在的仓库为练习场。命令右边的 `#` 是说明，不用输入。
 
-> **网络不行？走 Gitee 变体**：本计划在 Gitee 有同步镜像（地址以 Owner 公告为准）。下面的步骤**一条都不用改**——只需把 clone 的仓库地址换成 Gitee 镜像地址，网页操作也换到 Gitee 上做（Fork、PR 按钮位置几乎一样，全中文）。在这里练出的手感迁移到 GitHub 零成本；注意 Gitee 镜像上的 PR 不会回流 GitHub，真实贡献仍需在 GitHub 完成。
+> **网络不行？走 Gitee 变体**：本计划在 Gitee 有同步镜像：[gitee.com/li-yongqvan/internal-oss-roadmap](https://gitee.com/li-yongqvan/internal-oss-roadmap)。下面的步骤**一条都不用改**——只需把 clone 的仓库地址换成 Gitee 镜像地址，网页操作也换到 Gitee 上做（Fork、PR 按钮位置几乎一样，全中文）。在这里练出的手感迁移到 GitHub 零成本；注意 Gitee 镜像上的 PR 不会回流 GitHub，真实贡献仍需在 GitHub 完成。
 
 **准备（只做一次）**
 

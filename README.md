@@ -24,6 +24,7 @@
 - 路线图 v1：**已定稿**（2026-11-03 接受），进入 P0 执行阶段
 - 新人培养计划 v1：初稿（2026-11-04），待运营者审定后分发
 - 首个种子仓库：[ai-forum](https://github.com/li-yongqvan/ai-forum)
+- 国内访问：ai-forum 与本仓库均有 Gitee 同步镜像（[ai-forum 镜像](https://gitee.com/li-yongqvan/ai-forum)、[本仓库镜像](https://gitee.com/li-yongqvan/internal-oss-roadmap)），浏览与 clone 零门槛；issue / PR 等真实贡献仍在 GitHub 进行
 
 ## License
 
