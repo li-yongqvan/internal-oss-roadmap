@@ -70,6 +70,12 @@
 2. 学四组命令：`clone`、`branch` / `switch`、`add` + `commit`、`push`（附录 A 会带你逐个用一遍）
 3. 空跑一遍完整流程：照着**附录 A**操作——fork 本计划所在的仓库 → 改一个错别字 → 提出你的第一个 PR。别怕改错，这就是练习场
 
+![练习仓库首页——你的起点](assets/screenshots/01-gitee-home-annotated.png)
+*动手的起点长这样：① 右上角点 Fork，把仓库复制一份到自己名下；② 认准这个仓库（internal-oss-roadmap）。*
+
+![复制克隆地址](assets/screenshots/02-gitee-clone-annotated.png)
+*地址在这里复制：① 展开克隆/下载，把这个 HTTPS 地址贴进附录 A 的 `git clone` 命令里。*
+
 **完成标准**：不看笔记能说出"分支是什么、PR 是什么"。
 **卡点自救**：git 报错看不懂，把报错原文贴进 issue 问——贴原文提问，本身就是第 5 项能力的开始。
 **选看（无需看完再动手）**：想先看别人演示一遍，官方 [Hello World 互动教程](https://docs.github.com/zh/get-started/start-your-journey/hello-world)十来分钟在浏览器里走完整个 PR 流程；或康文昌的 18 分钟视频。都在附录 C 一档资源里。
@@ -82,12 +88,21 @@
 2. **写 README 新人快速上手**——你现在就是新人，你最知道新人会在哪卡住；这个视角以后就没了
 3. **补全部署文档**——照着部署一遍，把缺的步骤、报过的错原原本本写下来
 
+![认领你的第一个任务](assets/screenshots/05-github-issues-annotated.png)
+*第一个真实任务在 ai-forum 的 issue 列表：① 找绿色 good first issue 标签；② 点标题进任务，在评论区写"我来做"认领。*
+
+![创建你的第一个 Pull Request](assets/screenshots/04-gitee-pr-create-annotated.png)
+*任务做完后提 PR 的画面：① 源分支选你的分支；② 目标是 main；③ 标题一句话说清改了什么；④ 看到"可自动合并"绿标，就绪。*
+
 **完成标准**：一个被合并的 PR，加上你的名字出现在贡献者名录。
 **为什么是这三个**：都从真实需要里来；而且第 1 个任务练的是"做决定并给出理由"——开源里最值钱的动作之一。
 
 ### 第 2 步 · 独立贡献（第 3–8 周）
 
 认领常规 issue（非 good first issue），独立走完 讨论 → 修改 → 合并。这一步你会第一次经历：PR 被打回、意见你不认同、讨论之后各让一步。
+
+![review 的主战场：Files changed](assets/screenshots/07-pr-files-changed-annotated.png)
+*PR 的 Files changed 页：① 绿色 = 新增的行，reviewer 会逐行看；② 意见就写在这样的线程里——本图来自社区的真实演示 PR（internal-oss-roadmap #2）。*
 
 **完成标准**：不靠任何人手把手，完成一个常规任务。
 **这一步的真相**：不舒服是正常的。被 review 挑毛病是开源的日常，前三次最难，之后你会开始主动要反馈。
@@ -99,6 +114,9 @@
 - **review 别人的 PR**——用你被对待过的方式，对待更晚来的人
 - **带一个新人**——他卡在你卡过的地方时，你就是最好的老师
 - **开自己的仓库，成为 Owner**——在这个社区，成长的终点不是"升级"，而是你发起一个别人愿意来贡献的项目
+
+![新建你自己的仓库](assets/screenshots/09-gitee-new-repo-annotated.png)
+*第 3 步的终点之一——开自己的仓库（图为 Gitee，GitHub 同理）：① 起个仓库名；② 选开源（公开）；③ 点创建——从这一刻起，你就是 Owner。*
 
 ## 六、节奏与投入
 
@@ -180,6 +198,9 @@ ai-forum 是 Go + Web，但入门任务不要求写 Go。真要上手时你已�
 
 > **网络不行？走 Gitee 变体**：本计划在 Gitee 有同步镜像：[gitee.com/li-yongqvan/internal-oss-roadmap](https://gitee.com/li-yongqvan/internal-oss-roadmap)。下面的步骤**一条都不用改**——只需把 clone 的仓库地址换成 Gitee 镜像地址，网页操作也换到 Gitee 上做（Fork、PR 按钮位置几乎一样，全中文）。在这里练出的手感迁移到 GitHub 零成本；注意 Gitee 镜像上的 PR 不会回流 GitHub，真实贡献仍需在 GitHub 完成。
 
+![GitHub 的 Fork 按钮对照](assets/screenshots/08-github-fork-annotated.png)
+*GitHub 上同一个位置（仓库页右上角）也有 Fork 按钮——和你在 Gitee 用过的完全同构。*
+
 **准备（只做一次）**
 
 1. 注册 GitHub 账号
@@ -216,9 +237,20 @@ git commit -m "docs: 修正了××处的错别字"   # 引号里说清你做了�
 git push -u origin my-first-pr  # 推到你自己的仓库
 ```
 
+**网页路径（还没装 git？先走这条，同样成立）**：仓库里打开任一文件 → 点编辑（铅笔图标）→ 改内容 → 页面底部填提交信息、填一个新分支名 → 提交。第 0 步的练习走这条路完全合规，改的文件、提的分支和终端路径一模一样，之后再切到终端毫无违和。
+
+![在网页上直接改文件](assets/screenshots/03-gitee-edit-annotated.png)
+*① 在这里改文件内容；② 上方是 Markdown 工具栏。*
+
+![提交到新分支](assets/screenshots/03b-gitee-commit-form-annotated.png)
+*① 一句话说清改了什么；② 填一个新分支名，别动 main；③ 点提交。*
+
 **第四步：发起 PR**
 
 推送后刷新你的仓库页面，GitHub 会出现 **Compare & pull request** 按钮，点它。标题一句话概括改动；正文补充背景和原因；若有对应 issue，写上 `Closes #编号`。点 **Create pull request**。
+
+![GitHub 上 PR 建好后的样子](assets/screenshots/06-pr-conversation-annotated.png)
+*PR 的 Conversation 页：① 标题一句话说清改了什么；② 描述区写背景与改动——本图来自社区的真实演示 PR（internal-oss-roadmap #2）。*
 
 **第五步：响应 review**
 
